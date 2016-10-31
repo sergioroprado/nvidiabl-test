@@ -6,11 +6,13 @@ _________________
 wget https://github.com/madsherlock/nvidiabl/raw/master/install/deb/nvidiabl-dkms_0.88_all.deb
 sudo dpkg -i nvidiabl-dkms-0.88_all.deb
 rm nvidiabl-dkms_0.88_all.deb
+echo "nvidiabl" >> sudo /etc/modules
 
 To compile and install manually
 _________________
 Clone repository and go to nvidiabl root folder. Run
 make dkms-install
+echo "nvidiabl" >> sudo /etc/modules
 
 
 Kernel parameters that may be necessary (tested only on HP EliteBook 8560w)
