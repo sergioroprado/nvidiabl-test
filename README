@@ -13,6 +13,13 @@ Clone repository and go to nvidiabl root folder. Run
 make dkms-install
 
 
+Kernel parameters that may be necessary (tested only on HP EliteBook 8560w)
+____________________
+acpi_osi=linux acpi_backlight=vendor
+These are added to the GRUB_CMDLINE_LINUX_DEFAULT line of /etc/default/grub,
+either with a text editor or through a GUI like Grub Customizer.
+
+
 
 Original README from guillaumezin/nvidiabl below:
 ========================
