@@ -1,3 +1,21 @@
+This is a fork of guillaumezin/nvidiabl,
+which adds support for systems with linux kernel 4.0.0 or above.
+
+To install nvidiabl from .deb file
+_________________
+Go to install folder and run
+sudo dpkg -i nvidiabl-dkms-0.87_all.deb
+
+To compile and install manually
+_________________
+Clone repository and go to nvidiabl root folder. Run
+make dkms-install
+
+
+
+Original README from guillaumezin/nvidiabl below:
+========================
+
 /!\ Please note that I don't maintain this repository anymore, please have a look at forked projects. /!\
 
 I wrote a little Linux driver based on Andy Wingo's work
