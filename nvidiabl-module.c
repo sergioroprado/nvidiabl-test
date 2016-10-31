@@ -214,8 +214,11 @@ static int __init nvidiabl_init(void)
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,39)
 	
 	for (iii = 0 ; iii < sizeof(backlight_type_ids) ; iii++) {
-		if (strnicmp(bl_type, backlight_type_ids[iii].id, sizeof(bl_type)) == 0) {
-			props.type = backlight_type_ids[iii].type;
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,0,0)
+		if (strncasecmp(bl_type, backlight_type_ids[iii].id, sizeof(bl_type)) == 0) {
+#else
+ 		if (strnicmp(bl_type, backlight_type_ids[iii].id, sizeof(bl_type)) == 0) {
+#endif			props.type = backlight_type_ids[iii].type;
 			printk(KERN_INFO "nvidiabl: backlight type is %s\n", backlight_type_ids[iii].id);
 		}
 	}
