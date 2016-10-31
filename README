@@ -4,7 +4,7 @@ which adds support for systems with linux kernel 4.0.0 or above.
 To install nvidiabl from .deb file
 _________________
 Go to install folder and run
-sudo dpkg -i nvidiabl-dkms-0.87_all.deb
+sudo dpkg -i nvidiabl-dkms-0.88_all.deb
 
 To compile and install manually
 _________________
