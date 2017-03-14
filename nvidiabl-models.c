@@ -334,7 +334,8 @@ void nvidiabl_force_model(struct driver_data **driver_data) {
  * The list of supported devices was primarily taken from NvClock,
  * but only contains the mobile chips.
  */
-DEFINE_PCI_DEVICE_TABLE(nvidiabl_device_table) = {
+//DEFINE_PCI_DEVICE_TABLE(nvidiabl_device_table) = { //Mikael Westermann edit. This macro is deprecated.
+const struct pci_device_id nvidiabl_device_table[] = {
 
 #include "nvidiabl-gpu.h"
   

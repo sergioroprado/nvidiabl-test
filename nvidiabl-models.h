@@ -21,6 +21,7 @@
 
 extern void nvidiabl_force_model(struct driver_data **driver_data);
 
-extern DEFINE_PCI_DEVICE_TABLE(nvidiabl_device_table);
+//extern DEFINE_PCI_DEVICE_TABLE(nvidiabl_device_table); #Mikael Westermann edit. Deprecated macro.
+extern const struct pci_device_id nvidiabl_device_table[];
 
 #endif
