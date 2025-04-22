@@ -101,7 +101,7 @@ static int nv4x_map(struct driver_data *dd)
 		return -ENODEV;
 
 	/* Now really map (The address need not be page-aligned.) */
-	dd->smartdimmer = ioremap_cache(reg_addr, dd->reg_size);
+	dd->smartdimmer = ioremap(reg_addr, dd->reg_size);
 	if (!dd->smartdimmer)
 		return -ENXIO;
 
