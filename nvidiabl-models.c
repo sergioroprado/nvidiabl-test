@@ -234,7 +234,7 @@ static int nv5x_map(struct driver_data *dd)
 		if (reg_addr + dd->reg_size - 1 > bar_end)
 			return -ENODEV;
 		/* Now really map (The address need not be page-aligned.) */
-		dd->smartdimmer = ioremap_nocache(reg_addr, dd->reg_size);
+		dd->smartdimmer = ioremap_cache(reg_addr, dd->reg_size);
 		if (!dd->smartdimmer)
 			return -ENXIO;
 	}
@@ -244,7 +244,7 @@ static int nv5x_map(struct driver_data *dd)
 		if (reg_addr + dd->reg_size - 1 > bar_end)
 			return -ENODEV;
 		/* Now really map (The address need not be page-aligned.) */
-		dd->smartdimmer = ioremap_nocache(reg_addr, dd->reg_size);
+		dd->smartdimmer = ioremap_cache(reg_addr, dd->reg_size);
 		if (!dd->smartdimmer)
 			return -ENXIO;
 	}
@@ -254,7 +254,7 @@ static int nv5x_map(struct driver_data *dd)
 		/* Sanity check 2: Address should not exceed the PCI BAR */
 		if (reg_addr1 + dd->reg_size - 1 > bar_end)
 			return -ENODEV;
-		smartdimmer1 = ioremap_nocache(reg_addr1, dd->reg_size);
+		smartdimmer1 = ioremap_cache(reg_addr1, dd->reg_size);
 		if (!smartdimmer1)
 			return -ENXIO;
 
@@ -262,7 +262,7 @@ static int nv5x_map(struct driver_data *dd)
 		/* Sanity check 2: Address should not exceed the PCI BAR */
 		if (reg_addr2 + dd->reg_size - 1 > bar_end)
 			return -ENODEV;
-		smartdimmer2 = ioremap_nocache(reg_addr2, dd->reg_size);
+		smartdimmer2 = ioremap_cache(reg_addr2, dd->reg_size);
 		if (!smartdimmer2) {
 			iounmap(smartdimmer1);
 			return -ENXIO;
